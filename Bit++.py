@@ -20,23 +20,23 @@ def bitland_x(lines):
 
     for line in range(len):
     
-        if line == "" or line == " " or line == "Nan":
+        if line is None or line == " " or line == "Nan":
             print("Skipping Line {line} because it is empty")
             continue
 
-        if line  not contains(+) or not contains(-):
-            print("Skipping line {line} because it does not contain '+' or '-'")
+        if "+" not in line or "-" not in line:
+            print("Skipping line {line} because it does not contain '+' or '-' Bit++ operators")
             continue
 
-        if line =! str:
+        if line != str:
             print("Skipping line {line} because it is not a string")
             continue
 
-        if line contains(+):
+        if "+" in line:
             x =+ 1
             return 
        
-        # We assume the line has - if it made it through prior filters  
+        # We assume the line has - if it has made it through prior filters  
         x =- 1
         
     return x 
