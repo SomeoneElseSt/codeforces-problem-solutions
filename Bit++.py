@@ -8,11 +8,15 @@ def bitland_x(lines):
 
     x = 0 
 
-    # Get the lenght
-    len = lines[1]
+    lines = []
 
-    # Start after N lines statement
-    line = lines[-1]
+    # Reads the first line to read all following lines 
+    len = int(input())
+
+    for _ in range(len):
+        # Since we already called input, we can just use it again to read the next line which is the 2th
+        line = input()
+        lines.append(line)
 
     for line in range(len):
     
