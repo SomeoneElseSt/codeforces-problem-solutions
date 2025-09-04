@@ -11,9 +11,9 @@ def bitland_x(lines):
     lines = []
 
     # Reads the first line to read all following lines 
-    len = int(input())
+    lines_lenght = int(input())
 
-    for _ in range(len):
+    for _ in range(lines_lenght):
         # Since we already called input, we can just use it again to read the next line which is the 2th
         line = input()
         lines.append(line)
@@ -24,16 +24,14 @@ def bitland_x(lines):
             print("Skipping Line {line} because it is empty")
             continue
 
-        if "+" not in line or "-" not in line:
+        if "+" not in line and "-" not in line:
             print("Skipping line {line} because it does not contain '+' or '-' Bit++ operators")
             continue
 
         if "+" in line:
             x += 1
-            return 
-       
-        # We assume the line has - if it has made it through prior filters  
-        x -= 1
+        elif "-" in line:
+            x -= 1
         
     return x 
  
