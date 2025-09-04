@@ -28,10 +28,6 @@ def bitland_x(lines):
             print("Skipping line {line} because it does not contain '+' or '-' Bit++ operators")
             continue
 
-        if line != str:
-            print("Skipping line {line} because it is not a string")
-            continue
-
         if "+" in line:
             x += 1
             return 
