@@ -18,7 +18,7 @@ def bitland_x(lines):
         line = input()
         lines.append(line)
 
-    for line in range(len):
+    for line in lines:
     
         if line is None or line == " " or line == "Nan":
             print("Skipping Line {line} because it is empty")
@@ -33,13 +33,11 @@ def bitland_x(lines):
             continue
 
         if "+" in line:
-            x =+ 1
+            x += 1
             return 
        
         # We assume the line has - if it has made it through prior filters  
-        x =- 1
+        x -= 1
         
     return x 
-    
-
  
