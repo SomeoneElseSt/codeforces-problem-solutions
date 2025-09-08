@@ -11,12 +11,3 @@ if len(unique_chars) % 2 == 0:
 else:
     print("IGNORE HIM!")
 
-
-username = input()
-
-if len(username) % 2 ==0:
-    print("CHAT WITH HER!")
-else:
-    print("IGNORE HIM!")
- 
-    
