@@ -4,7 +4,7 @@ unique_chars = []
 
 for char in username:
     if char not in unique_chars:
-        unique_chars.append
+        unique_chars.append(char)
     
 if len(unique_chars) % 2 == 0:
     print("CHAT WITH HER!")
