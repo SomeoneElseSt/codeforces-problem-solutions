@@ -21,43 +21,40 @@ LAST_POSITION = 4
 
 step_counter = 0
 
-def get_remainder_steps(line, step_counter):
+def get_remainder_steps_at_third_line(line, step_counter):
     # If we are at either the first or last position, move two steps inwards 
-    if TARGET == line[FIRST_POSITION] or TARGET == line[LAST_POSITION]
+    if TARGET == line[FIRST_POSITION] or TARGET == line[LAST_POSITION]:
         step_counter += TWO_STEPS
     # If we are at either the second or fourth positions, move one step inwards
-    elif TARGET == line[FIRST_POSITION + 1] or TARGET == line[LAST_POSITION - 1] 
+    elif TARGET == line[FIRST_POSITION + 1] or TARGET == line[LAST_POSITION - 1]:
         step_counter += ONE_STEP
     return step_counter
 
-while CENTER_INDEX =! == TARGET:
+while CENTER_INDEX != TARGET:
     if TARGET in line_3:
-        print(get_remainder_steps(line_3, step_counter))
+        print(get_remainder_steps_at_third_line(line_3, step_counter))
         break
     elif TARGET in line_1:
-        # We go down two lines
         step_counter += TWO_STEPS
         line_3 = line_1
-        print(get_remainder_steps(line_3, step_counter))
-        break # Stop the treatment
+        print(get_remainder_steps_at_third_line(line_3, step_counter))
+        break 
     elif TARGET in line_2:
-        # We go down by one line
         step_counter += ONE_STEP
         line_3 = line_2
-        print(get_remainder_steps(line_3, step_counter))
-        break # Stop the treatment 
-    elif TARGET in line_5
-        # We go up by two lines 
-        step_counter += TWO_STEPS
-        line_3 = line_5 
-        print(get_remainder_steps(line_3, step_counter))
-        break # Stop the treatment
-    elif TARGET in line_4    
-        # We go up by one line 
+        print(get_remainder_steps_at_third_line(line_3, step_counter))
+        break 
+    elif TARGET in line_4:
         step_counter += ONE_STEP
         line_3 = line_4 
-        print(get_remainder_steps(line_3, step_counter))
+        print(get_remainder_steps_at_third_line(line_3, step_counter))
         break
+    elif TARGET in line_5:
+        step_counter += TWO_STEPS
+        line_3 = line_5 
+        print(get_remainder_steps_at_third_line(line_3, step_counter))
+        break 
+
 
 
 
