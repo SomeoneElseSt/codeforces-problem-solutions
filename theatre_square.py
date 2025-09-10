@@ -1,9 +1,6 @@
 import math 
 
-line = "664"
-line = list(line)
-
-n, m, a = int(line[0]), int(line[1]), int(line[2])
+n, m, a = map(int, input().split())
 
 squares_needed = math.ceil(n / a) * math.ceil(m / a)
 
