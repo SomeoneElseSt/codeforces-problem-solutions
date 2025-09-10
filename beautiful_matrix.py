@@ -1,11 +1,3 @@
-# Some thoughts: 
-# We can check all lines l < line_3 < l
-# If 1 is in them, move them down/up to the next line until l == line_3 
-# Two paths from here: 
-# If 1 == line_3[3] return the count 
-# If 1 != line[3] count how many spaces there are to [3] and return the count
-# We do need to move 1 up/down keeping directionality, though. What we can do here is replace the following lines 
-
 line_1 = input()
 line_2 = input()
 line_3 = input()
