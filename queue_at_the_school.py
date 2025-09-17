@@ -13,17 +13,12 @@ n, t = map(int, input().split())
 line = list(input())
 
 for times in range(t):
-    r_pointer = len(line) - 1
-    l_pointer = len(line) - 2
 
-    for pair in range(len(line)):
-        r_pointer -= 1
-        l_pointer -= 1
+    for i in range(len(line) - 1, 0, -1):
+        r_pointer = line[i]
+        l_pointer = line[i - 1]
+
+        if l_pointer == "B" and r_pointer == "G":
+            line[i -1], line[i] = line[i], line[i -1]    
         
-        if line[l_pointer] == "B" and line[r_pointer] == "G":
-            line[l_pointer], line[r_pointer] = line[r_pointer], line[l_pointer] 
-
-print(str(line))
-
-
-        
+print(''.join(line))
