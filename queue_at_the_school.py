@@ -14,11 +14,12 @@ line = list(input())
 
 for times in range(t):
 
-    for i in range(len(line) - 1, 0, -1):
-        r_pointer = line[i]
-        l_pointer = line[i - 1]
+    to_swap = []
+    for i in range(len(line) - 1):
+        if line[i] == "B" and line[i + 1] == "G":
+            to_swap.append(i)
 
-        if l_pointer == "B" and r_pointer == "G":
-            line[i -1], line[i] = line[i], line[i -1]    
-        
+    for i in to_swap:
+        line[i], line[i + 1] = line[i + 1], line[i]
+            
 print(''.join(line))
