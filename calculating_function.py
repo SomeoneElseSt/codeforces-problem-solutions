@@ -12,6 +12,8 @@
 # So so long as I can get two lists each of n // 2 one even and one odd, this is trivial. Or two variables
 # The question is how to get them in O(1) or some other Theta-bound 
 # We can use a Gauss's sum over the sequence for this
+# Post solution note: A gauss worked here because the sequence is alternating, so it just had to be packed into pairs of two 
+
 
 n = int(input()) 
 
