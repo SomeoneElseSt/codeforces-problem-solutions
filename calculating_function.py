@@ -9,7 +9,7 @@ n = int(input())
 result = 0
 switched = False
 
-for i in range(n):
+for i in range(1, n):
 
     if switched == False:
         result -= i
