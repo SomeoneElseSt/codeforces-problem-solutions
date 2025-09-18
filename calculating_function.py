@@ -11,19 +11,16 @@
 # The problem really is = sum(even numbers up to N // 2) - sum(odd numbers up to N // 2)
 # So so long as I can get two lists each of n // 2 one even and one odd, this is trivial. Or two variables
 # The question is how to get them in O(1) or some other Theta-bound 
-# We can use Gauss's sum for this
+# We can use a Gauss's sum over the sequence for this
 
 n = int(input()) 
 
-n_halved = n // 2
-
-def gauss_sum_even(n):
-    return 
-
-def gauss_sum_odd(n):
-    return 
-
-print(gauss_sum_even(n_halved) - gauss_sum_odd(n_halved))
+if n % 2 == 0:
+    r = n // 2
+else: 
+    r = -(n + 1) // 2
+    
+print(r)
 
 # Some innefficient implementation
 # for i in range(1, n + 1):
