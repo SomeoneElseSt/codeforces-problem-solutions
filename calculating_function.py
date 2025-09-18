@@ -7,6 +7,11 @@
 # Processing 
 # We need to take the i-th element, and with the right operator modify it with the i-th + 1 element, keeping track of the result  
 
+# The above was not efficient for a bigger N
+# The problem really is = sum(even numbers up to N) - sum(odd numbers up to N)
+# So so long as I can get two lists each of n // 2 one even and one odd, this is trivial. Or two variables
+# The question is how to get them in O(1) or some other Theta-bound 
+
 n = int(input())
 
 result = 0
