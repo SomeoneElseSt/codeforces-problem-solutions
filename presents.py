@@ -13,10 +13,10 @@ for i, friend in enumerate(friends, start = 1):
         reversed_friends.append(friend)
     else: 
         # We need to scan the list to find a value where
-        # i == friends
-        # ie. the current index (enumerate) is equal to a value in the list 
-        for j in friends:
-            if i == friend: 
-                reversed_friends.append(friends.index(friend))
+        # friend == i 
+        # ie. the current value is equal to the index (the friend who gave to the friend in that position) and then append its position 
+        for position, friend in enumerate(friends, start = 1):
+            if friend == i:
+                reversed_friends.append(position)
 
 print(' '.join(map(str, reversed_friends)))
