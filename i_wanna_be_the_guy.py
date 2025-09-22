@@ -23,6 +23,6 @@ y = list(map(int,input().split()))
 nums = set(x + y)
 levels = [i for i in range(1, n + 1)]
 
-result = "I become the guy" if all(int in nums for int in levels) else "Oh, my keyboard!"
+result = "I become the guy." if all(int in nums for int in levels) else "Oh, my keyboard!"
 
 print(result)
