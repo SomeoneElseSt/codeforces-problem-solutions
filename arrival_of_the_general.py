@@ -1,3 +1,8 @@
+# Some notes: 
+# Len gives the actual count, starting at 1. Same for any N that describes the amount of test cases or elements 
+# Array indices start from 0, so valid indices are: 0, 1, 2, ..., (n-1)
+# Distance to first position (index 0) = current_index (because the current index is the distance to the first position)
+# Distance to last position (index n-1) = (n-1) - current_index (because the current index is the distance to the last position - 1 to account for the zero index)
 
 n = int(input())
 nums_list = list(map(int,input().split()))
