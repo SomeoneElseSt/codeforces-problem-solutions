@@ -12,10 +12,14 @@ consts = [100, 20, 10, 5, 1]
 counter = 0
 
 while n > 0:
-    for bill in consts:
-        if bill <= n:
-            counter += 1 
-            n -= bill
-            break
+    if n > 100:
+        counter += n // 100
+        n -= (n // 100) * 100
+    else:       
+        for bill in consts:
+            if bill <= n:
+                counter += 1 
+                n -= bill
+                break
 
 print(counter)
