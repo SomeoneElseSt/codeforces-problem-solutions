@@ -1,19 +1,17 @@
 n = int(input())
 
+polyhedrons_sides = {
+    "Tetrahedron": 4,
+    "Cube": 6,
+    "Octahedron": 8,
+    "Dodecahedron": 12,
+    "Icosahedron": 20
+}
+
 sides_counter = 0
 
-for figure in range(n):
+for input_figure in range(n):
     current_figure = input()
-
-    if current_figure == "Tetrahedron":
-        sides_counter += 4
-    elif current_figure == "Cube":
-        sides_counter += 6
-    elif current_figure == "Octahedron":
-        sides_counter += 8 
-    elif current_figure == "Dodecahedron":
-        sides_counter += 12
-    elif current_figure == "Icosahedron":
-        sides_counter += 20
+    sides_counter += polyhedrons_sides[current_figure]
 
 print(sides_counter)
