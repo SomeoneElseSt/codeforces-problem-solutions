@@ -20,13 +20,12 @@ swap = False
 
 for line in range(1,n+1):
     if line % 2 != 0: # Odd, snake line
-        snake.extend(s_line)
+        snake.append(s_line)
     elif swap == False: # Not odd, start at j_line_r
-        snake.extend(j_line_r)
+        snake.append(j_line_r)
         swap = True
     elif swap == True: # Swaps order
-        snake.extend(j_line_l)
+        snake.append(j_line_l)
         swap = False
 
-print(snake)
 print("\n".join(map(str, snake)))
