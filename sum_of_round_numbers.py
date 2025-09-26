@@ -12,7 +12,7 @@ results = []
 
 for test_case in range(n):
     current_t = int(input())
-    filtered_t = [ch for ch in list(dict.fromkeys(map(int, str(current_t)))) if ch != 0]
+    filtered_t = {int(ch) for ch in str(current_t) if ch != '0'}
 
     if len(filtered_t) == 1:
         results.append(1)
@@ -21,10 +21,11 @@ for test_case in range(n):
         list_t = list(map(int, str(current_t)))
         builder = []
 
-        for i in range(0, len(list_t)+ 1):
-            builder.append(list_t[i] + ((i - len(list_t) - 1) *  0))
-
-        results.extend(len(builder))
+        for i in range(0, len(list_t)):
+            if list_t[i] != 0:
+                builder.append(str(list_t[i]) + "0" * (len(list_t) - i - 1))
+        
+        results.append(len(builder))
         results.extend(builder)
 
 print("\n".join(map(str, results)))
