@@ -12,22 +12,16 @@ results = []
 
 for test_case in range(n):
     current_t = int(input())
-    filtered_t = {int(ch) for ch in str(current_t) if ch != '0'}
+    list_t = list(map(int, str(current_t)))
+    builder = []
 
-    if len(filtered_t) == 1:
-        results.append(1)
-        results.append(current_t)
-    else:
-        list_t = list(map(int, str(current_t)))
-        builder = []
-
-        counter = 0
-        for i in range(0, len(list_t)):
-            if list_t[i] != 0:
-                builder.append(str(list_t[i]) + "0" * (len(list_t) - i - 1))
-                counter += 1
-        delimiter = " "
-        results.append(counter)
-        results.append(delimiter.join(builder))
+    counter = 0
+    for i in range(0, len(list_t)):
+        if list_t[i] != 0:
+            builder.append(str(list_t[i]) + "0" * (len(list_t) - i - 1))
+            counter += 1
+    delimiter = " "
+    results.append(counter)
+    results.append(delimiter.join(builder))
 
 print("\n".join(map(str, results)))
