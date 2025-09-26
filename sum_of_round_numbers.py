@@ -11,14 +11,20 @@ n = int(input())
 results = []
 
 for test_case in range(n):
-    current_t = list(set(map(int, str(input()))))
+    current_t = int(input())
+    filtered_t = [ch for ch in list(dict.fromkeys(map(int, str(current_t)))) if ch != 0]
 
-    for i in current_t:
-        if len(current_t) > 2:
-            results.append(len(current_t) - 1) # - 1 to exclude 0
-            results.append(i + (len(current_t) - current_t.index(i)) *  0)
-        else:
-            results.append(1)
-            results.append(i)
+    if len(filtered_t) == 1:
+        results.append(1)
+        results.append(current_t)
+    else:
+        list_t = list(map(int, str(current_t)))
+        builder = []
+
+        for i in range(0, len(list_t)+ 1):
+            builder.append(list_t[i] + ((i - len(list_t) - 1) *  0))
+
+        results.extend(len(builder))
+        results.extend(builder)
 
 print("\n".join(map(str, results)))
