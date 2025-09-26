@@ -21,11 +21,13 @@ for test_case in range(n):
         list_t = list(map(int, str(current_t)))
         builder = []
 
+        counter = 0
         for i in range(0, len(list_t)):
             if list_t[i] != 0:
                 builder.append(str(list_t[i]) + "0" * (len(list_t) - i - 1))
-        
-        results.append(len(builder))
-        results.extend(builder)
+                counter += 1
+        delimiter = " "
+        results.append(counter)
+        results.append(delimiter.join(builder))
 
 print("\n".join(map(str, results)))
