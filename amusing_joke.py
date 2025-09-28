@@ -19,17 +19,11 @@ pile = list(input())
 
 joint_names = g_name + h_name 
 
-temp = []
-counter = 0
-target = joint_names[counter]
-
-while temp != joint_names:
-    for char in pile:
-        if char == target:
-            temp.append(char)
-            target = joint_names[counter + 1]
-
-if joint_names or len(temp) != len(joint_names):
+if len(pile) > len(joint_names):
     print("NO")
-else:
+    exit()
+
+if all([pile.count(c) == joint_names.count(c) for c in set(joint_names + pile)]):
     print("YES")
+else:
+    print("NO")
