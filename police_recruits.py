@@ -17,11 +17,10 @@ counter = 0
 
 for event in events: 
     if event > 0:
-        officers =+ event
+        officers += event
     else: 
         if officers > 0:
             officers = officers - 1
         else:
             counter += 1
-
 print(counter)
