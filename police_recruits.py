@@ -12,15 +12,15 @@
 n = int(input())
 events = list(map(int, input().split()))
 
-officers = 0 
-counter = 0
+OFFICERS = 0
+COUNTER = 0
 
-for event in events: 
+for event in events:
     if event > 0:
-        officers += event
-    else: 
-        if officers > 0:
-            officers = officers - 1
+        OFFICERS += event
+    else:
+        if OFFICERS > 0:
+            OFFICERS = OFFICERS - 1
         else:
-            counter += 1
-print(counter)
+            COUNTER += 1
+print(COUNTER)
