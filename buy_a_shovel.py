@@ -12,16 +12,12 @@ k, r = map(int, input().split())
 temp = 0
 counter = 0
 
-if int(str(k)[-1]) == r:
-    print("1")
-    exit()
-else:
-    for i in range(10):
-        counter += 1
-        temp += k
-        l_digit = int(str(temp)[-1])
-        if l_digit == r or l_digit == 0:
-            break
+for i in range(10):
+    counter += 1
+    temp += k
+    l_digit = int(str(temp)[-1])
+    if l_digit == r or l_digit == 0:
+        break
 
 print(counter)
             
