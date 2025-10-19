@@ -3,14 +3,14 @@
 n = int(input())
 
 AVAIL = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-COUNTER = 0
 
 for i in range(n):
+    COUNTER = 0
     BASE, TARGET = map(int, input().split())
 
     if BASE == TARGET:
         print("0")
-        break
+        continue
 
     for i in AVAIL:
         test = BASE + i if BASE < TARGET else BASE - i 
@@ -23,5 +23,5 @@ for i in range(n):
     while BASE != TARGET:
         BASE = BASE + max(AVAIL) if BASE < TARGET else BASE - max(AVAIL)
         COUNTER += 1        
-
+     
     print(COUNTER)
