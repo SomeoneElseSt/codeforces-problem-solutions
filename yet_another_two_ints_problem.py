@@ -20,8 +20,6 @@ for i in range(n):
             COUNTER += 1
             break
     
-    while BASE != TARGET:
-        BASE = BASE + max(AVAIL) if BASE < TARGET else BASE - max(AVAIL)
-        COUNTER += 1        
-     
+    COUNTER += abs(int((BASE - TARGET) / max(AVAIL)))   
+
     print(COUNTER)
