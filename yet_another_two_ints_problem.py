@@ -9,7 +9,7 @@ for i in range(n):
     BASE, TARGET = map(int, input().split())
 
     if BASE == TARGET:
-        print("0")
+        print(COUNTER)
         continue
 
     for i in AVAIL:
