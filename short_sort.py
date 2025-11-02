@@ -7,25 +7,16 @@ for t in range(n):
         print("YES")    
         continue
     else:
+        c_t_a = c_t.copy()
+        c_t_b = c_t.copy()
         c_t_c = c_t.copy()
         t = False
 
-        c_t_c[0], c_t_c[1] = c_t_c[1], c_t_c[0]
-        if "".join(c_t_c) == 'abc':
-            print("YES")
-            t = True
-            continue
-
-        c_t_c = c_t.copy()
-        c_t_c[1], c_t_c[2] = c_t_c[2], c_t_c[1]
-        if "".join(c_t_c) == 'abc':
-            print("YES")
-            t = True
-            continue
-
-        c_t_c = c_t.copy()
+        c_t_a[0], c_t_a[1] = c_t_a[1], c_t_a[0]
+        c_t_b[1], c_t_b[2] = c_t_b[2], c_t_b[1]
         c_t_c[0], c_t_c[2] = c_t_c[2], c_t_c[0]
-        if "".join(c_t_c) == 'abc':
+
+        if "".join(c_t_a) == 'abc' or "".join(c_t_b) == 'abc' or "".join(c_t_c) == 'abc':
             print("YES")
             t = True
             continue
