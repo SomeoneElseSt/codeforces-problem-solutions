@@ -21,11 +21,19 @@ for line in input:
     strpd_line = int(re.sub("[^0-9]", "", line))
 
     # Re-append < 99 chunks with R/L rotation marker 
-    if strpd_line > 100:
+    if strpd_line > 99:
         lines = []
+        marker = "L" if "L" in line else "R"
 
+        # Append chunks of 99 or a remainder to lines
         while strpd_line > 0:
+            print(f"line {line} is being trimmed down")
+            chunk = 99 if strpd_line > 99 else strpd_line
+            strpd_line -= chunk
+            lines.append(marker + str(chunk))
+            print(f"current lines ls is {lines}")
        
+    # Else leave the original line alone 
     else:
         lines = [line]
 
@@ -33,9 +41,8 @@ for line in input:
 
         # Determine the direction extracting L/R with a regex
         if "L" in l:
-            line_n = int(re.sub("L", "", line))
+            line_n = int(re.sub("L", "", l))
             print(f"current line {line_n}")
-
 
             if DIAL - line_n < 0: 
                 DIAL -= (line_n - 100)
@@ -51,7 +58,7 @@ for line in input:
                 print(f"current line was LEFT and == 0. DIAL {DIAL}\n")
             
         elif "R" in l:
-            line_n = int(re.sub("R", "", line))
+            line_n = int(re.sub("R", "", l))
             print(f"current line {line_n}")
 
             # The only way to go over is if the sum is > 99      
@@ -68,4 +75,5 @@ for line in input:
                 DIAL += line_n
                 print(f"current line was RIGHT and < 99. DIAL {DIAL}\n")
 
+print()
 print(f"counter {COUNTER}")
