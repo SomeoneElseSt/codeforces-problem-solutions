@@ -71,7 +71,7 @@ for line in input:
                     DIAL = (DIAL + line_n) - 100
                     print(f"current line was RIGHT and > 99. DIAL {DIAL}\n")
 
-            elif DIAL + line_n < 99:
+            elif DIAL + line_n <= 99:
                 DIAL += line_n
                 print(f"current line was RIGHT and < 99. DIAL {DIAL}\n")
 
