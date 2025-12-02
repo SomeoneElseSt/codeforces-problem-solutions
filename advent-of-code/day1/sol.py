@@ -12,8 +12,6 @@ import re
 input = open("test.txt")
 
 DIAL = 50
-print(f"DIAL {DIAL}")
-print()
 COUNTER = 0
  
 # Iterate over each line 
@@ -29,21 +27,24 @@ for line in input:
             DIAL -= line_n
 
         elif DIAL - line_n == 0:
+            DIAL = 0
             COUNTER += 1
+
 
     elif "R" in line:
         line_n = int(re.sub("R", "", line))
-     
+
+        # The only way to go over is if the sum is > 99      
         if DIAL + line_n > 99:
-            
-            
-        elif DIAL + line_n < 99:
-            DIAL += line_n
+            if (DIAL + line_n) - 100 == 0:
+                DIAL = 0
+                COUNTER += 1
+            else:
+                DIAL = (DIAL + line_n) - 100
 
-        elif DIAL + line_n == 0:
-            COUNTER += 1
+    elif DIAL + line_n < 99:
+        DIAL += line_n
 
-print()
 print(COUNTER)
 
         
